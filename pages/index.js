@@ -1,6 +1,7 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import { GraphQLClient, gql } from "graphql-request";
+import BlogCard from "../components/BlogCard";
 
 const graphcms = new GraphQLClient(
   "https://api-us-west-2.graphcms.com/v2/cl3xj8k1w0m5301v0fu2r4v1i/master"
@@ -23,12 +24,7 @@ const QUERY = gql`
         }
       }
       coverPhoto {
-        publishedAt {
-          createdBy {
-            id
-          }
-          url
-        }
+        url
       }
     }
   }
